@@ -1,0 +1,23 @@
+<div class="wrapp">
+  <div *ngIf="categories" class="filter-nav">
+    <input type="radio" name="filter" id="0" checked><label for="0" (click)="getAllProducts()"><span>Усі категорії</span></label>
+
+    <div *ngFor="let category of categories" class="filter-nav">
+
+      <input type="radio" name="filter" [id]="category._id"
+      (change)="getProductsByCategory($event, category.en)">
+
+      <label
+      [for]="category._id"
+      matRipple
+      matRippleColor="#959db0144"
+      >
+        <span>{{category.ua | titlecase}}</span>
+      </label>
+    </div>
+  </div>
+  <div class="search_wrap">
+    <input type="text" class="search" placeholder="Я шукаю...">
+  </div>
+
+</div>

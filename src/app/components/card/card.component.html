@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card_img-wrap">
+    <a *ngIf="isActive;else pasive" [routerLink]="['/product', product._id]">
+      <div class="img-wrap">
+        <img [src]="product.img" alt="" class="img">
+        <span>Перейти</span>
+      </div>
+    </a>
+
+    <ng-template #pasive>
+      <span>
+        <div class="img-wrap">
+          <img [src]="product.img" alt="" class="img">
+          <span>Перейти</span>
+        </div>
+      </span>
+    </ng-template>
+
+  </div>
+  <div class="card_content">
+    <p class="card_description">
+
+        <a *ngIf="isActive;else pasive2" [routerLink]="['/product', product._id]">
+          <span> Категорія: {{product.categoryUA | titlecase}} <br></span>
+          <span> Виробник: {{product.producer | uppercase}}<sup>&copy;</sup> <br></span>
+          <span> Модель: {{product.model | uppercase}} <br></span>
+        </a>
+      <ng-template #pasive2>
+        <span>Категорія: {{product.categoryUA | titlecase}}</span>
+        <span>Виробник: {{product.producer | uppercase}}<sup>&copy;</sup></span>
+        <span>Модель: {{product.model | uppercase}}</span>
+      </ng-template>
+
+    </p>
+    <p class="chips">
+      Low speed dental parts, Contra angle parts, Compatible with Kavo, Keys
+    </p>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+// @import "../../../../assets/scss/variables.scss";
+// @import "../../../../assets/scss/utils.scss";
+
+
+// .container {
+//   position: relative;
+// }
+
+// .wrapper {
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin: 0 auto;
+// }
+
+// .item {
+//   width: calc(25% - 10px);
+//   margin: 5px;
+//   position: relative;
+//   overflow: hidden;
+//   cursor: pointer;
+
+//   img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   }
+
+//   &_delete {
+//     display: block;
+//     position: absolute;
+//     top: -2rem;
+//     right: .2rem;
+//     text-align: center;
+//     transition: 0.3s;
+
+//     button {
+//       width: 30px;
+//       height: 30px;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       background-color: rgba(199, 13, 13, 0.726);
+
+//       &:hover {
+//         background-color: rgba(199, 13, 13, 1);
+//       }
+
+//       mat-icon {
+//         display: inline-block;
+//         font-size: 1rem;
+//         line-height: 1.5rem;
+//       }
+//     }
+//   }
+
+//   &_select {
+//     display: block;
+//     position: absolute;
+//     bottom: -2rem;
+//     left: 0;
+//     right: 0;
+//     text-align: center;
+//     padding: 0.3rem;
+//     background-color: $primary-color;
+//       color: transparent;
+//     cursor: pointer;
+//     transition: 0.3s;
+//     &:hover {
+//       background-color: rgba(19, 158, 38, 0.815);
+//     }
+//   }
+
+//   &:hover {
+//     .item_delete {
+//       top: .2rem;
+//       transition: 0.3s;
+//     }
+
+//     .item_select {
+//       color: #fff;
+//       bottom: 0;
+//       transition: 0.3s, color .4s;
+//     }
+//   }
+
+//   @media only screen and (max-width: 600px) {
+//     width: calc(50% - 10px);
+//     margin: 5px;
+//   }
+// }
+
+// .btn-absolute {
+//   position: absolute;
+//   bottom: 20px;
+//   right: 20px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+//   [type="file"] {
+//     display: none;
+//   }
+// }
+
+
+// .loader{
+//   margin: 3rem;
+//   width: 300px;
+// }

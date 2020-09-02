@@ -1,0 +1,172 @@
+@import './variables.scss';
+
+/*.container {
+  max-width: 1060px;
+  margin: 0 auto;
+
+}
+
+.container-mid {
+  max-width: 945px
+}
+
+
+.nav-container {
+  max-width: 945px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 27px;
+  font-weight: 300;
+  line-height: 32px;
+  text-transform: uppercase;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  user-select: none;
+}
+
+.btn {
+  padding: 10px 20px;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 20px;
+  border-left: 1px solid transparent;
+  border-radius: 0;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+
+  &:last-child {
+    border-right: 1px solid transparent;
+  }
+}
+
+.btn:hover,
+.active {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 30.21%, #ffb300 69.79%), #ffcc80;
+
+  border-left: 1px solid #333;
+  &:last-child {
+    border-right: 1px solid #333;
+  }
+}
+
+.color-gray{
+  color: #666666;
+}
+
+.primary-color{
+  color: $primary-color;
+}
+
+.text-center{
+  text-align: center;
+}
+// Section title
+
+.title-wrap{
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.title {
+  overflow-x: hidden;
+  margin-bottom: 0;
+  height: 2.2rem;
+  span{
+    margin-top: .2rem;
+  display: inline-block;
+  position: relative;
+  font-size: 2rem;
+  font-weight: lighter;
+
+}}
+
+
+.title span::before {
+  content: "";
+  height: 2px;
+  width: calc(100% * 30);
+  background-color: #FFB300;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(calc(-100% - 50px),0);
+}
+
+.title span::after {
+  content: "";
+  height: 2px;
+  width: calc(100% * 30);
+  background-color: #FFB300;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(calc(100% + 50px),0);
+}
+
+.hr{
+  margin: 2rem 0;
+}
+
+.color-sucess{
+  color: #4caf50;
+}
+
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #fff;
+}
+
+
+::-webkit-scrollbar-track {
+  border-radius: 2.5px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 2.5px;
+}
+
+
+// delete arrows from input type number
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.emty{
+  text-align: center;
+  font-size: 1rem;
+  height: 150px;
+  width: 300px;
+}
+
+.d-flex-grow{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .gr-1{
+    flex-grow: 1;
+  }
+}
+*/

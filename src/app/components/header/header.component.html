@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-lg navbar-dark my-bg-dark pt-0 pb-0">
+  <a
+    routerLink="/products"
+    class="logo navbar-brand d-flex align-items-center mt-0 mb-0" >
+    <img src="../../../assets/images/Logo.png" alt="logo" class="mr-1">
+    <span>Lviv Rotors</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"
+        routerLinkActive="my-active"
+        [routerLinkActiveOptions]="{exact: true}"
+        >
+          <a [routerLink]="['/']"
+            class="nav-link"
+            aria-label="main"
+            >Головна
+          </a>
+      </li>
+      <li class="nav-item" routerLinkActive="my-active" >
+        <a [routerLink]="['/categories']"
+            class="nav-link"
+            aria-label="categories"
+            >Категорії
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="my-active">
+        <a [routerLink]="['/products']"
+            class="nav-link"
+            aria-label="production"
+            >Продукція
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="my-active">
+        <a *ngIf="isAdmin; else number"
+          [routerLink]="['/admin']"
+          class="nav-link"
+          aria-label="admin"
+          >Адмін
+        </a>
+      <ng-template #number>
+        <a class="nav-link tel"
+            href="tel:+380636309711"
+            >
+              <i class="fas fa-phone-alt"></i>
+              <span aria-label="phone number">+38(063) 63 09711</span>
+        </a>
+      </ng-template>
+      </li>
+      <li class="nav-item">
+        <app-basket-button></app-basket-button>
+      </li>
+    </ul>
+  </div>
+</nav>
+<header class="">
+  <div class="">
+    <!-- Header top -->
+    <div class="header_top">
+
+      <div>
+
+
+      </div>
+    </div>
+    <!-- Header bottom -->
+    <!-- <div class="">
+      <nav class="" role="navigation">
+        <ul>
+          <li><a routerLinkActive="active" [routerLink]="['/']" [routerLinkActiveOptions]="{exact: true}" class="btn"
+              aria-label="main">Головна</a></li>
+          <li><a routerLinkActive="active" [routerLink]="['/categories']" class="btn"
+              aria-label="categories">Категорії</a></li>
+          <li><a routerLinkActive="active" [routerLink]="['/products']" class="btn"
+              aria-label="production">Продукція</a></li>
+        </ul>
+        <div>
+
+
+        </div>
+      </nav>
+    </div> -->
+  </div>
+</header>

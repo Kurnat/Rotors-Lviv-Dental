@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>Підтвердження інформації про товар</h2>
+<mat-dialog-content class="mat-typography confirm">
+  <div class="confirm_img">
+    <img [src]="product.img || defaultImage" alt="">
+  </div>
+  <div>
+    <p *ngIf="product.model">Модель: </p>
+    <p *ngIf="product.producer">Виробник: </p>
+    <p *ngIf="product.material">Матеріал: </p>
+    <p *ngIf="product.size">Розмір: </p>
+    <p *ngIf="product.date">Дата: </p>
+    <p *ngIf="product.categories">Категорія: </p>
+    <p *ngIf="product.ourSeriusNumber">Наш серійни номер: </p>
+    <p *ngIf="product.seriusNumber">Cерійни номер: </p>
+    <p *ngIf="product.price">Ціна: </p>
+  </div>
+  <div class="values">
+    <p *ngIf="product.model"> {{product.model}}</p>
+    <p *ngIf="product.producer"> {{product.producer}}</p>
+    <p *ngIf="product.material"> {{product.material}}</p>
+    <p *ngIf="product.size"> {{product.size}}</p>
+    <p *ngIf="product.date"> {{product.date | date:"dd/MM/yyyy HH:mm:ss"}}</p>
+    <p *ngIf="product.categories">{{product.categoryUA | titlecase}} | {{product.categories}}</p>
+    <p *ngIf="product.ourSeriusNumber"> {{product.ourSeriusNumber}}</p>
+    <p *ngIf="product.seriusNumber"> {{product.seriusNumber}}</p>
+    <p *ngIf="product.price"> {{product.price}} грн.</p>
+  </div>
+  <!-- <p>Learn one way to build applications with Angular and reuse your code and abilities to build
+    apps for any deployment target. For web, mobile web, native mobile and native desktop.</p> -->
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-stroked-button mat-dialog-close [mat-dialog-close]="false">Скасувати</button>
+  <button mat-raised-button color="primary" cdkFocusInitial (click)="confirmProduct()">Підтвердити</button>
+</mat-dialog-actions>
+
+

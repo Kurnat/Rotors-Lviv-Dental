@@ -1,0 +1,77 @@
+<div class="container d-flex-grow">
+  <app-header></app-header>
+
+  <mat-sidenav-container class="gr-1">
+    <!-- mat-sidenav -->
+    <mat-sidenav mode="side" [(opened)]="opend">
+      <mat-action-list>
+        <a mat-list-item color="primary" routerLinkActive="list-item-active" [routerLink]="['/admin', 'products']">
+          Продукти </a>
+        <a mat-list-item color="primary" routerLinkActive="list-item-active" [routerLink]="['/admin', 'producers']">
+          Виробники </a>
+        <a mat-list-item color="primary" routerLinkActive="list-item-active" [routerLink]="['/admin', 'categories']">
+          Категорії </a>
+        <a mat-list-item color="primary" routerLinkActive="list-item-active" [routerLink]="['/admin', 'orders']">
+          Замовлення </a>
+      </mat-action-list>
+    </mat-sidenav>
+    <!-- mat-sidenav-content -->
+    <mat-sidenav-content>
+      <!-- tool-bar -->
+      <mat-toolbar>
+        <button mat-icon-button class="example-icon" (click)="opend = !opend"
+          aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Панель Адміністратора</span>
+
+        <span class="example-spacer"></span>
+
+
+        <!-- Add new product -->
+
+          <button *ngIf="adminRoute === '/admin/products'"
+          (click)="openProductDialog()"
+            mat-icon-button mat-raised-button
+            class="example-icon favorite-icon  color-sucess"
+            aria-label="Example icon-button with heart icon">
+              <mat-icon>art_track</mat-icon>
+          </button>
+
+          <button
+            *ngIf="adminRoute === '/admin/categories'"
+            (click)="openCategoriesDialog()"
+            mat-icon-button mat-raised-button
+            class="example-icon favorite-icon  color-sucess"
+            aria-label="Example icon-button with heart icon">
+              <mat-icon>wysiwyg</mat-icon>
+          </button>
+
+          <button
+            *ngIf="adminRoute === '/admin/orders'"
+            mat-icon-button mat-raised-button
+            class="example-icon favorite-icon color-sucess"
+            aria-label="Example icon-button with heart icon">
+              <mat-icon>list</mat-icon>
+          </button>
+
+        <button
+          mat-icon-button
+          class="example-icon"
+          aria-label="Example icon-button with share icon">
+            <mat-icon>share</mat-icon>
+        </button>
+      </mat-toolbar>
+
+      <!-- table hear -->
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
+
+
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+  <app-footer></app-footer>
+</div>

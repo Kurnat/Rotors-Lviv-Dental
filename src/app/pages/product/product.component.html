@@ -1,0 +1,94 @@
+<div class="container">
+  <!-- Card of product -->
+  <div class="product" *ngIf="product; else loader">
+    <div>
+      <img class="img" [src]="product.img" alt="">
+      <div class="img-model">
+        <p>Продукт №.</p>
+        <p>{{product.ourSeriusNumber}}</p>
+      </div>
+      <hr>
+      <div class="img-model">
+        <p>Поділитися</p>
+        <p class="primery-color">
+          <a href=""><i class="fab fa-facebook-f"></i></a> &nbsp;
+          <a href=""><i class="fab fa-twitter"></i></a>
+        </p>
+      </div>
+    </div>
+
+    <div class="description">
+      <!-- <p class="compatibility">Цей товар підходить для продуктів <span class="primery-color">KAVO®</span></p> -->
+      <div class="key">
+        <p *ngIf="product.model">Модель: </p>
+        <p *ngIf="product.producer">Виробник: </p>
+        <p *ngIf="product.material">Матеріал: </p>
+        <p *ngIf="product.size">Розмір: </p>
+        <!-- <p>Дата: </p> -->
+        <p *ngIf="product.categories">Категорія: </p>
+        <p>Наш серійни номер: </p>
+        <!-- <p>Cерійни номер: </p> -->
+        <p>Ціна: </p>
+      </div>
+      <div class="values">
+        <p *ngIf="product.model"> {{product.model}}</p>
+        <p *ngIf="product.producer"> {{product.producer}}</p>
+        <p *ngIf="product.material"> {{product.material}}</p>
+        <p *ngIf="product.size"> {{product.size}}</p>
+        <!-- <p> {{product.date | date}}</p> -->
+        <p *ngIf="product.categories"> {{product.categories}}</p>
+        <p> {{product.ourSeriusNumber}}</p>
+        <!-- <p> {{product.seriusNumber}}</p> -->
+        <p> {{product.price}} грн.</p>
+      </div>
+
+      <!-- <p class="product_value">1. Контрастний кут CA 1:1/1:1 L</p>
+      <p class="product_value">2. Оригінальний P/N 150055</p>
+      <p class="copyright color-gray">© 2020 LVIV ROTORS, Copyright – всі права захищенні. LVIV ROTORS компанія або їхня продукція жодним чином не
+        пов'язані з компанією BIEN AIR®.</p>
+      <div class="hr">
+        <hr>
+        <hr>
+      </div>
+      <p>Виникли запитання? <a class="color-gray" href="tel:+380636309711">Подзвоніть нам.</a></p> -->
+    </div>
+
+    <div>
+      <button class="btn" (click)="addToBasket(product)">В корзину</button>
+    </div>
+  </div>
+
+  <ng-template #loader>
+    <div class="loader">
+      <app-loader></app-loader>
+    </div>
+  </ng-template>
+
+
+  <!-- Similar products -->
+  <div class="title-wrap">
+    <p class="title"><span>Схожі товари</span></p>
+  </div>
+  <app-carosel></app-carosel>
+  <!-- <div class="similar">
+    <div>
+      <app-card></app-card>
+    </div>
+    <div>
+      <app-card></app-card>
+    </div>
+    <div>
+      <app-card></app-card>
+    </div>
+    <div>
+      <app-card></app-card>
+    </div>
+
+
+  </div> -->
+
+  <p>
+    You can set specific index to start from it
+  </p>
+
+</div>

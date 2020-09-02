@@ -1,0 +1,12 @@
+<p mat-dialog-title>Виберіть продукт</p>
+<div mat-dialog-content>
+<div class="card_container" *ngIf="products; else loader">
+  <app-card *ngFor="let product of products" [product]="product" [isActive]="data.isActive" [mat-dialog-close]="product"></app-card>
+</div>
+
+<ng-template #loader>
+  <div class="loader">
+    <app-loader></app-loader>
+  </div>
+</ng-template>
+</div>

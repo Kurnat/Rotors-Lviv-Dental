@@ -1,0 +1,30 @@
+<div class="wrapp">
+  <!-- Filter if screen is wider then 576px  -->
+
+  <app-filter-nav (filterEmit)="updateProducts($event)"></app-filter-nav>
+
+
+  <main>
+    <!-- Toggle filter button -->
+    <div class="search-wrapp">
+      <!-- <button (click)="opend=!opend" *ngIf="!maxWidth576px;" class="toggle-btn">Усі Категорії</button> -->
+
+
+    </div>
+    <div class="card_wrapp">
+      <!-- Catd container -->
+      <div class="card_container" *ngIf="products; else loader">
+        <div class="card" *ngFor="let product of products">
+          <app-card [product]="product"></app-card>
+        </div>
+      </div>
+
+      <ng-template #loader>
+        <div class="loader">
+          <app-loader></app-loader>
+        </div>
+      </ng-template>
+
+    </div>
+  </main>
+</div>

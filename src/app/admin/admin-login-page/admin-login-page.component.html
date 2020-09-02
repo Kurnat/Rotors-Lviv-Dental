@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="popap">
+    <p class="text-center enter">Увійти в систему</p>
+    <form [formGroup]="adminForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="">Ваш email:</label>
+        <input type="email" formControlName="email">
+      </div>
+
+      <div class="form-group">
+        <label for="">Ваш пароль:</label>
+        <input type="password" formControlName="password">
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Увійти" [disabled]="!adminForm.valid">
+      </div>
+    </form>
+  </div>
+</div>

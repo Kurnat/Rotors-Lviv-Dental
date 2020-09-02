@@ -1,0 +1,55 @@
+<div mat-dialog-title class="d-flex">
+  <p>Редагувати замовлення</p>
+  <button
+  (click)="addProduct()"
+  mat-icon-button mat-raised-button class="example-icon" aria-label="Example icon-button with share icon">
+  <mat-icon >add</mat-icon>
+</button>
+</div>
+
+
+
+<div mat-dialog-content>
+  <div class="product" *ngFor="let order of data.products">
+    <div class="product_img">
+      <img [src]="order.img" alt="">
+    </div>
+    <div class="product_decr">
+      <p><strong>Категорія</strong>: {{order.categoryUA | titlecase}}</p>
+      <p><strong>Виробник</strong>: {{order.producer | titlecase}}</p>
+      <p><strong>Модель</strong>: {{order.model | titlecase}}</p>
+      <p><strong>Розмір</strong>: {{order.size | titlecase}}</p>
+      <p><strong>Серійний номер</strong>: {{order.seriusNumber}}</p>
+    </div>
+    <div class="product_count">
+      <div><button (click)="minuseProduct(order)">-</button> {{order.count}} <button (click)="plusProduct(order)">+</button></div>
+    </div>
+    <div class="product_sum">{{order.count * order.price }} грн.</div>
+    <button class="product_delete" (click)="deleteProduct(order)">&#215;</button>
+  </div>
+  <div>
+   Сума: {{totalPrice}}
+  </div>
+
+  <form class="form" enctype="multipart/form-data" [formGroup]="form">
+    <div class="form-group">
+      <!-- Producer field -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Ваше Ім'я</mat-label>
+        <input matInput placeholder="ПІБ" formControlName="userName">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Номер телефону</mat-label>
+        <input matInput placeholder="BL-3" formControlName="phone">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="BL-3" formControlName="email">
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-stroked-button mat-dialog-close [mat-dialog-close]="false">Скасувати</button>
+  <button mat-raised-button color="primary" cdkFocusInitial [mat-dialog-close]="data" (click)="makeOrder()">Підтвердити</button>
+</div>

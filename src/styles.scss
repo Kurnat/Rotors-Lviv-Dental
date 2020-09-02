@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+// @import url("./assets/scss/fonts.scss");
+// @import url("./assets/scss/normalize.scss");
+// @import url("./assets/scss/variables.scss");
+
+// ngx-glide
+@import '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
+@import '../node_modules/@glidejs/glide/src/assets/sass/glide.theme.scss';
+
+
+
+html, body { height: 100%; }
+body {margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;background: #f0ece3;}
+

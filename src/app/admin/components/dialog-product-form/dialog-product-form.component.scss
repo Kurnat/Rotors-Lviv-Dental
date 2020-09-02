@@ -1,0 +1,79 @@
+@import '../../../../assets/scss/utils.scss';
+
+.dialog_wrapper{
+  width: 100%;
+}
+mat-dialog-content,
+[mat-dialog-title],
+mat-dialog-actions {
+  min-width: 100%;
+}
+
+mat-form-field{
+  width: 50%;
+}
+
+.full-width {
+  width: calc(50% -10px);
+  margin: 0 5px;
+}
+
+.form-group{
+  // min-width: 150px;
+  // max-width: 800px;
+  width: 100%;
+  display: flex;
+
+}
+
+.mat-dialog-actions{
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+}
+
+
+
+input[type="file"]{
+  display: none;
+}
+
+mat-dialog-actions{
+  button{
+    margin-left: .5rem;
+  }
+}
+
+.bg-success{
+  background-color: rgb(30, 146, 26);
+}
+
+.img-wrap{
+  height: 100px;
+  width: 100px;
+  position: relative;
+  // margin-top: -10px;
+
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: 1px dotted #ccc;
+  }
+  button{
+    position: absolute;
+    top: -.5rem;
+    right: -1.5rem;
+    // transform: translate(-50%, -50%);
+  }
+}
+
+.footer{
+  padding: .5rem;
+  display: flex;
+  justify-content: flex-end;
+
+  .action{
+    margin-left: .5rem;
+  }
+}

@@ -1,0 +1,89 @@
+<div class="dialog_wrapper">
+  <header>
+    <h2 mat-dialog-title>Додати товар</h2>
+  </header>
+  <mat-dialog-content class="mat-typography">
+    <!-- <p>{{data.name}} You Will be logged out bue to inactivity</p> -->
+    <form class="form" enctype="multipart/form-data" [formGroup]="form">
+      <div class="form-group">
+        <!-- Producer field -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Виробник</mat-label>
+          <input matInput placeholder="W&H" formControlName="producer">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Модель</mat-label>
+          <input matInput placeholder="BL-3" formControlName="model">
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <!-- Producer field -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Матеріал</mat-label>
+          <input matInput placeholder="Алюміній" formControlName="material">
+        </mat-form-field>
+        <!-- Size field -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Розмір</mat-label>
+          <input matInput placeholder="3.18×5.8×1.4/2.3mm" formControlName="size">
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <!-- Our Serius Number field -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Наш серійний номер</mat-label>
+          <input matInput placeholder="RBR100" formControlName="ourSeriusNumber">
+        </mat-form-field>
+        <!-- Serius Number field -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Серійний номер</mat-label>
+          <input matInput placeholder="DL320" formControlName="seriusNumber">
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <!-- Price field -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Ціна</mat-label>
+          <input type="number" matInput placeholder="950" formControlName="price">
+        </mat-form-field>
+        <!-- Categories field -->
+        <mat-form-field appearance="outline" class="full-width" *ngIf="categories">
+          <mat-label>Категорії</mat-label>
+          <mat-select formControlName="categories">
+            <mat-option *ngFor="let category of categories" [value]="category.en">
+              {{category.ua | titlecase}}
+            </mat-option>
+          </mat-select>
+
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <!-- Date field -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Дата</mat-label>
+          <input matInput [matDatepicker]="datepickerRef" formControlName="date" [max]="maxDate">
+          <mat-datepicker-toggle matSuffix [for]="datepickerRef"></mat-datepicker-toggle>
+          <mat-datepicker #datepickerRef></mat-datepicker>
+        </mat-form-field>
+
+        <div class="full-width">
+          <div class="img-wrap">
+            <img [src]="imgUrl" alt="photo" class="img">
+            <input type="hidden" formControlName="img" [value]="imgUrl">
+            <button class="mat-button bg-success" mat-fab matTooltip="Вибрати зображення" matTooltipPosition="left"
+              (click)="openImagesDialog()">
+              <mat-icon>perm_media</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </mat-dialog-content>
+  <footer class="footer">
+    <button mat-stroked-button [mat-dialog-close]="result">Скасувати</button>
+    <button mat-raised-button color="primary" (click)="openConfirmModal()"
+      *ngIf="data.isNewProduct==='isNewProduct'" class="action">Додати</button>
+    <button mat-raised-button color="primary" (click)="openConfirmModal()"
+      *ngIf="data.isNewProduct==='isEdit'" class="action">Редагувати</button>
+  </footer>
+</div>

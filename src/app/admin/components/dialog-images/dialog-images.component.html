@@ -1,0 +1,38 @@
+<p mat-dialog-title>Виберіть зображення</p>
+<div class="container" *ngIf="images;else loader">
+  <mat-dialog-content class="mat-typography">
+    <div class="wrapper">
+      <div class="wrapper" *ngIf="images.length;else empty">
+        <div class="item" *ngFor="let item of images">
+          <span class="item_delete">
+            <button mat-mini-fab (click)="deletePhoto(item.url)">
+              <mat-icon>clear</mat-icon>
+            </button>
+          </span>
+          <img [src]="item.url" [mat-dialog-close]="item.url" alt="Зображення продукту">
+          <span class="item_select" [mat-dialog-close]="item.url">Вибрати</span>
+        </div>
+      </div>
+
+      <ng-template #empty>
+        <div class="emty">
+          <p>Зображення відсутні</p>
+        </div>
+      </ng-template>
+
+      <button class="mat-button btn-absolute" mat-fab color="primary" (click)="addImage()"
+        matTooltip="Завантажити зображення" matTooltipPosition="left">
+        <mat-icon>file_upload</mat-icon>
+        <input type="file" name="file" #file (change)="fileChange($event)">
+      </button>
+    </div>
+
+
+
+  </mat-dialog-content>
+</div>
+<ng-template #loader>
+  <div class="loader">
+    <app-loader></app-loader>
+  </div>
+</ng-template>

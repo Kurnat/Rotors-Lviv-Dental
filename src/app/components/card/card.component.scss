@@ -1,0 +1,76 @@
+.card {
+  box-shadow: 0px 1px 4px rgba(85, 97, 129, 0.5);
+  overflow: hidden;
+  background-color: #fff;
+
+  &_img-wrap {
+    object-fit: fill;
+    height: 170px;
+    position: relative;
+    overflow: hidden;
+
+    .img-wrap {
+      height: 100%;
+      width: 100%;
+
+
+      img {
+        width: 100%;
+        min-width: 235px;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      img + span {
+        content: "Перейти";
+        display: block;
+        position: absolute;
+        z-index: 1;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 108%;
+        height: 30px;
+        background-color: #00a2ff88;
+        color: transparent;
+        text-align: center;
+        padding-top: 0.3rem;
+        font-size: 20px;
+        transition: bottom 0.2s, color .2s .1s;
+        font-weight: 300;
+      }
+
+      img:hover + span,
+      img + span:hover {
+        bottom: 0%;
+        color: #fff;
+        transition: bottom 0.2s, color .2s .1s;
+      }
+    }
+
+
+
+
+  }
+
+  // content
+  &_content{
+    background-color: #fff;
+    p{
+      padding: 11px 8px;
+    }
+
+    .chips{
+      color: #999
+    }
+  }
+
+
+}
+
+

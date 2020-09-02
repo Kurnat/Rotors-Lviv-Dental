@@ -1,0 +1,49 @@
+<!-- Progress Bar -->
+<app-progress-bar *ngIf="progressBar"></app-progress-bar>
+
+<!-- filter -->
+ <mat-form-field>
+   <mat-label>Фільтр</mat-label>
+   <input matInput (keyup)="applyFilter($event)" placeholder="Я шукаю..." #input class="filter mat-subheading-1">
+ </mat-form-field>
+
+ <!-- Table -->
+ <div class="table-wrapper" *ngIf="categories && categories.length;else empty">
+   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+     <!-- Position Column -->
+     <ng-container matColumnDef="position">
+       <th mat-header-cell *matHeaderCellDef> № </th>
+       <td mat-cell *matCellDef="let element;let idx = index"> {{idx + 1}} </td>
+     </ng-container>
+     <!-- Producer Column -->
+     <ng-container matColumnDef="ua">
+       <th mat-header-cell mat-sort-header *matHeaderCellDef> Назва Українською </th>
+       <td mat-cell *matCellDef="let element"> {{element.ua | titlecase}} </td>
+     </ng-container>
+     <!-- Model Column -->
+     <ng-container matColumnDef="en">
+       <th mat-header-cell *matHeaderCellDef mat-sort-header> Назва Англійською </th>
+       <td mat-cell *matCellDef="let element"> {{element.en | titlecase}} </td>
+     </ng-container>
+
+     <!-- Action Column -->
+     <ng-container matColumnDef="action">
+       <th mat-header-cell *matHeaderCellDef> Редагувати/Видалити </th>
+       <td mat-cell *matCellDef="let element">
+
+         <div class="button-group">
+           <button mat-stroked-button color="primary" (click)="openCategoriesDialog(element)">Ред.</button>
+           <button mat-stroked-button color="warn" (click)="openDeledeDialog(element)">Вид.</button>
+         </div>
+       </td>
+     </ng-container>
+
+     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+     <tr mat-row *matRowDef="let row; columns: displayedColumns;let i = index"></tr>
+   </table>
+ </div>
+
+ <ng-template #empty>
+    <p *ngIf="!progressBar" class="text-center">Категорії відсетні</p>
+ </ng-template>
+

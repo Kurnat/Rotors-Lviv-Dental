@@ -1,0 +1,91 @@
+@import '../../../assets/scss/variables.scss';
+
+.product{
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  padding: .5rem;
+  margin: .5rem 0;
+  position: relative;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  display: flex;
+  flex: 1 0 100px;
+
+  >div:not(.product_img){
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &_decr {
+    padding: 0 0.5rem;
+    width: 200px;
+    // border: 1px solid #000;
+
+  }
+
+  &_img {
+    object-fit: cover;
+    width: 150px;
+    height: 120px;
+    border-radius: 4px;
+    overflow: hidden;
+
+    >img{
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &_count, &_sum{
+    // border: 1px solid #000;
+    width: 100px;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_count > div > button {
+    border: 0;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #FFB300;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    transition: box-shadow .3s;
+    &:active{
+      transition: box-shadow .3s;
+      box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  &_delete {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border: 0;
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    top: 1rem;
+    right: 1rem;
+    vertical-align: middle;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    transition: box-shadow .3s;
+    &:active{
+      transition: box-shadow .3s;
+      box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+}

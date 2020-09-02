@@ -1,0 +1,64 @@
+// @import url("../../../assets/scss/utils.scss");
+
+.footer {
+  white-space: nowrap;
+  font-weight: lighter;
+  &-top {
+    display: flex;
+    padding: 1rem;
+    color: #e4e7eb;
+    background: linear-gradient(180deg, #474747 0%, rgba(255, 255, 255, 0) 100%), #2c2c2c;
+  }
+
+  &-bootom {
+    background: #e4e7eb;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  &-container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-contacts{
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1.7rem;
+    &_details{
+      @media (max-width: 576px) {
+       display: none;
+      }
+    }
+  }
+
+  .logo-img {
+    height: 3rem;
+    float: left;
+  }
+
+  .logo{
+    font-size: 1rem;
+    line-height: normal;
+    margin: .3rem .5rem;
+    color: #f4f4f4;
+  }
+}
+
+@media (max-width: 436px) {
+  .footer-container {
+    // display: block;
+
+    > div{
+      // width: 40%;
+      &:last-child {
+        display:none;
+      }
+    }
+  }
+
+}

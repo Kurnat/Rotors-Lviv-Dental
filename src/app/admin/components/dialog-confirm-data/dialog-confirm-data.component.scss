@@ -1,0 +1,24 @@
+@import '../../../../assets/scss/utils.scss';
+
+.confirm{
+  display: flex;
+  min-width: 70vw;
+
+
+    img{
+      width: 250px;
+      height: auto;
+      object-fit: fill;
+      // float: left;
+      margin-right: 1rem;
+
+      @media only screen and (max-width: 600px)  {
+        width: 115px;
+      }
+    }
+
+    .values{
+      margin-left: 1rem;
+    }
+
+}

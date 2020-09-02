@@ -1,0 +1,91 @@
+ <div class="container">
+  <div class="row pl-1 pr-1">
+    <div class=" col-md-10 col-10">
+      <div class="form-group ">
+        <label for="exampleInputEmail1">Пошук</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+    </div>
+    <div class="col-md-2 col-2">
+      <label for="validationDefault04">State</label>
+      <select class="custom-select" id="validationDefault04" required>
+        <option selected disabled value="">Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Дата</th>
+      <th scope="col">Інформація про клієнта</th>
+      <th scope="col">Придбано</th>
+      <th scope="col">Сума</th>
+      <th scope="col">Редагувати/Видалити</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders;let idx = index" >
+      <th scope="row" class="align-middle">{{order.orderNumber}}</th>
+      <td class="align-middle">{{order.date | date:"dd/MM/yyyy"}} <br>
+        {{order.date | date:"HH:mm:ss"}}
+      </td>
+      <td class="align-middle">
+        <div>
+          Ім'я: <strong>{{order.userName | titlecase}}</strong>
+        </div>
+        <div>
+          Email: <strong><a [href]="'mailto:' + order.email">{{order.email}}</a></strong>
+        </div>
+        <div>
+          Телефон: <strong><a [href]="'tel:+' + order.phone">{{order.phone}}</a></strong>
+        </div>
+      </td>
+      <td class="align-middle">
+        <div class="product" *ngFor="let prod of order.products;let i = index"
+           [routerLink]="['/product', prod.product._id]">
+           <div>{{i+1}}) Товар: <strong>{{prod.product.categoryUA | titlecase}}</strong></div>
+           <div>Виробник: <strong>{{prod.product.producer}}</strong></div>
+           <div>Модель: <strong>{{prod.product.model}}</strong></div>
+           <div>Кількість: <strong>x{{prod.count}}</strong> шт.</div>
+           <div>Вартість: <strong>{{prod.product.price}}</strong> &#8364;.</div>
+           <div>Наш серійний номер: <strong>{{prod.product.ourSeriusNumber}}</strong></div>
+           <div>Серійний номер виробника: <strong>{{prod.product.seriusNumber}}</strong></div>
+         </div>
+      </td>
+      <!-- Sum -->
+      <td class="align-middle">
+        {{ order.sum }} &#8364;.
+      </td>
+      <!-- Buttons -->
+      <td class="align-middle">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button
+            (click)="openEditDialog(order)"
+            [disabled]="loader"
+            matRipple
+            matRippleColor="#967209a1"
+            type="button"
+            class="btn btn-outline-warning"
+            >Ред.
+          </button>
+          <button
+            (click)="openDeledeDialog($event,order)"
+            [disabled]="loader"
+            matRipple
+            matRippleColor="#68182079"
+            type="button"
+            class="btn btn-danger"
+            >Вид.
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<app-loader *ngIf="loader"></app-loader>

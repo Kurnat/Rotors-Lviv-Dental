@@ -1,0 +1,50 @@
+// .slide {
+//   height: 270px;
+//   // border: solid 1px red;
+//   overflow: hidden;
+
+//   .card_img-wrap {
+//     object-fit: fill;
+//     height: 170px;
+//     position: relative;
+//     overflow: hidden;
+
+//     img {
+//       width: 105%;
+//       // min-width: 235px;
+//       height: auto;
+//       display: block;
+//       // position: absolute;
+//     }
+
+//     // img + span {
+//     //   display: block;
+//     //   position: absolute;
+//     //   z-index: 1;
+//     //   bottom: -30px;
+//     //   left: 50%;
+//     //   transform: translateX(-50%);
+//     //   width: 108%;
+//     //   height: 30px;
+//     //   background-color: #00a2ff88;
+//     //   color: #ccc;
+//     //   text-align: center;
+//     //   padding-top: 0.3rem;
+//     //   font-size: 20px;
+//     //   transition: bottom 0.2s, color .2s .1s;
+//     //   font-weight: 300;
+//     // }
+
+//     // img:hover + span,
+//     // img + span:hover {
+//     //   bottom: 0%;
+//     //   color: #fff;
+//     //   transition: bottom 0.2s, color .2s .1s;
+//     // }
+//   }
+
+//   &_description {
+//     display: inline-block;
+//     padding: 0 .5rem;
+//   }
+// }

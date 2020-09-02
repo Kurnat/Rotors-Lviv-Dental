@@ -1,0 +1,68 @@
+// @import '../../../assets/scss/utils.scss';
+// @import '../../../assets/scss/variables.scss';
+
+
+// .popap{
+//   width: 320px;
+//   border: 1px solid #cccccc;
+//   margin: 100px auto;
+//   padding: 1rem;
+//   background-color: #333;
+//   color: #f4f4f4;
+//   border-radius: 6px;
+//   .enter{
+//     font-size: 2rem;
+//     font-weight: 200;
+//     margin-bottom: 1.5rem;
+//   }
+
+//   .form-group{
+//     label, input{
+//       display: inline-block;
+//       width: 100%;
+//     }
+
+//     input{
+//       margin-bottom: .5rem;
+//       padding: .2rem .5rem;
+//       outline: none;
+//       border: 1px solid #222;
+//       border-radius: 4px;
+//     }
+
+//     input[type="email"],
+//     input[type="password"]{
+//       // border:
+//     }
+
+//     input[type="email"]:focus,
+//     input[type="password"]:focus{
+//       border-color: $primary-color;
+//     }
+
+//     input[type="submit"]{
+//       cursor: pointer;
+//       border: 1px solid #333;
+//       padding: .3rem;
+//       margin-top: .5rem;
+//       color: #f4f4f4;
+//       background: linear-gradient(180deg, rgba(255, 255, 255, 0) 30.21%, #099D33 69.79%), #00DC58;
+//     }
+//     input[type="submit"]{
+//       &:hover{
+//         border: 1px solid #099D33;
+//       }
+
+//       &:active{
+//         border: 1px solid #11e04c;
+//       }
+
+//       &:disabled{
+//         border-color: #ddd ;
+//         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 30.21%, #888888 69.79%), #cccccc;
+
+//       }
+//     }
+//   }
+// }
+

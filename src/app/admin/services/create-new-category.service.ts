@@ -1,0 +1,19 @@
+import { ICategory, ICategoryResult } from '../../shared/interfaces';
+import { Injectable } from '@angular/core';
+import { Subject, Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CreateNewCategoryService {
+  private newCategory = new Subject();
+  constructor() { }
+
+  listen(): Observable<any> {
+    return this.newCategory;
+  }
+
+  change(category: ICategoryResult): void {
+    this.newCategory.next(category);
+  }
+}

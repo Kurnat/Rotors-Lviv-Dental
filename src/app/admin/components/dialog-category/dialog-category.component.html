@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Нова Категорія</h2>
+<mat-dialog-content class="mat-typography confirm">
+  <form class="form" enctype="multipart/form-data" [formGroup]="form">
+    <div class="form-group">
+      <!-- Producer field -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>UA</mat-label>
+        <input matInput placeholder="Ротор" formControlName="ua">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>EN</mat-label>
+        <input matInput placeholder="Rotor" formControlName="en">
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<footer class="footer">
+  <button mat-stroked-button mat-dialog-close>Скасувати</button>
+    <button mat-raised-button color="primary"  class="action" *ngIf="data.isNewCategory"  (click)="createCategory()" mat-dialog-close>Створити</button>
+    <button mat-raised-button color="primary"  class="action" *ngIf="!data.isNewCategory" [mat-dialog-close]="{isNew: false, category: form.value}">Редагувати</button>
+</footer>
